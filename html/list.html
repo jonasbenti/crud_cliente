@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <center>
+    <title>Listagem de clientes</title>
+    <!--<link href="css/list.css" rel="stylesheet" type="text/css" media="screen"/>-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="panel panel-default">
+    <div id="appTable" class="table-responsive" height="100%" width="100%">
+    <H1>Listagem de clientes </H1>
+    <button onclick="window.location='index.php?class=ClienteForm'" class="btn btn-success">
+        Inserir Cliente
+   </button>
+</center>
+<table class="table table-striped">
+<thead class="thead-dark">
+    <tr>
+        <td></td>
+        <td></td>
+        <td>Id</td>
+        <td>Nome Completo</td>
+        <td>Email</td>
+        <td>CPF</td>
+        <td>Telefone</td>
+    </tr>
+</thead>
+<tbody class="Table table-striped table-bordered table-hover">
+    {items}
+</tbody>
+    
+</table>
+
+
+</div>
+
+</body>
+</html>

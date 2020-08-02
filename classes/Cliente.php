@@ -81,24 +81,29 @@ class Cliente
         try
         {
             $conn = self::getConnection();
+            $id = addslashes($cliente['id']);
+            $nome_completo = addslashes($cliente['nome_completo']);
+            $email = addslashes($cliente['email']);
+            $cpf = addslashes($cliente['cpf']);
+            $telefone = addslashes($cliente['telefone']);
            
-            if (empty($cliente['id'])) ///Insere o registro
+            if (empty($id)) ///Insere o registro
             {
                 $sql = "INSERT INTO cliente (nome_completo, email, cpf, telefone) 
-                VALUES ('{$cliente['nome_completo']}', 
-                        '{$cliente['email']}', 
-                        '{$cliente['cpf']}', 
-                        '{$cliente['telefone']}')";
+                VALUES ('$nome_completo', 
+                        '$email', 
+                        '$cpf', 
+                        '$telefone')";
             }
             else // Atualiza o registro
             {
                 $sql = "UPDATE cliente SET
-                nome_completo = '{$cliente['nome_completo']}',
-                email = '{$cliente['email']}',
-                cpf = '{$cliente['cpf']}',
-                telefone = '{$cliente['telefone']}'
+                nome_completo = '$nome_completo',
+                email = '$email',
+                cpf = '$cpf',
+                telefone = '$telefone'
                
-                WHERE id = '{$cliente['id']}'";
+                WHERE id = '$id'";
             }
 
             return $conn->query($sql);
